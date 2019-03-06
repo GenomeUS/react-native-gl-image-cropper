@@ -12,7 +12,7 @@
     "gl-react-native": "^2.57.0",
     "react": "16.6.1",
     "react-native": "0.57.5",
-    "react-native-gl-image-cropper": "../"
+    "react-native-gl-image-cropper": "github:GenomeUS/react-native-gl-image-cropper#master"
   },
   "devDependencies": {
     "babel-jest": "24.1.0",
