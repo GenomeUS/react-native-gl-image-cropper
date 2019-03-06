@@ -15,7 +15,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: Install dependencies
-          command: npm install && cd example && npm install
+          command: npm run installForCi
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
