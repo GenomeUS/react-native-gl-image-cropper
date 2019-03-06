@@ -1,2 +1,3 @@
 npm install;
-cd example && npm install;
+ls;
+cd /example && npm install;
