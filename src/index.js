@@ -1,1 +1,1 @@
-export { default } from './ImageCropper';
+module.exports.ImageCropper = require('./ImageCropper');

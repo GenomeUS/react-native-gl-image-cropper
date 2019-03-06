@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
-import ImageCropper from '../src';
-
+import { ImageCropper } from 'react-native-gl-image-cropper';
 
 
 export default class App extends Component {
