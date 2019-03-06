@@ -1,0 +1,17 @@
+{
+  "name": "react-native-gl-image-cropper",
+  "version": "1.0.0",
+  "description": "Image cropper that implements gl-react-native and gl-react.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "gl-react": "2.2.4",
+    "gl-react-native": "2.57.0",
+    "react": "16.6.1",
+    "react-native": "0.57.5"
+  },
+  "author": "José Guerrero",
+  "license": "MIT"
+}
