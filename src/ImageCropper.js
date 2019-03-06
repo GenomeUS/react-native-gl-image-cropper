@@ -25,11 +25,12 @@ const imageDimensionsAfterZoom = (viewport, dimensions, zoom) => {
   };
 };
 
-const movementFromZoom = (gestureState, dimensions, offsets, zoom) => {
+const movementFromZoom = (gestureState, viewport, dimensions, offsets, zoom) => {
   // X-axis
   const pxVsMovX = (1 / dimensions.width);
   const moveX = (gestureState.dx * pxVsMovX) * zoom;
   const newPosX = (parseFloat(offsets.x) - parseFloat(moveX));
+
   // Y-axis
   const pxVsMovY = (1 / dimensions.height);
   const moveY = (gestureState.dy * pxVsMovY) * zoom;
@@ -77,9 +78,8 @@ class ImageCropper extends Component {
       imageDimWidth: this._dimensionAfterZoom.width,
     });
 
+    /*eslint-disable */
     this._panResponder = PanResponder.create({
-      /* eslint-disable */
-
       onStartShouldSetPanResponder: (evt, gestureState) => true,
       onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
@@ -88,14 +88,15 @@ class ImageCropper extends Component {
       onShouldBlockNativeResponder: (evt, gestureState) => true,
 
       onPanResponderGrant: (evt, gestureState) => {
-        /* eslint-enable */
         // move variables
         this.offsetX = this.state.centerX;
         this.offsetY = this.state.centerY;
+
         // zoom variables
         this.zoomLastDistance = 0;
         this.zoomCurrentDistance = 0;
       },
+      /* eslint-enable */
 
       onPanResponderMove: (evt, gestureState) => {
         // We are moving the image
@@ -111,12 +112,14 @@ class ImageCropper extends Component {
 
           const movement = movementFromZoom(
             gestureState,
+            { width: this.props.cropWidth, height: this.props.cropHeight },
             { width: this.state.imageDimWidth, height: this.state.imageDimHeight },
             { x: this.offsetX, y: this.offsetY },
             this.state.zoom,
           );
           this.setState({ centerX: movement.x });
           this.setState({ centerY: movement.y });
+          return;
         }
         // We are zooming the image
         if (this.zoomLastDistance === 0) {
@@ -135,6 +138,7 @@ class ImageCropper extends Component {
           this.zoomCurrentDistance = c.toFixed(1);
           const distance = (this.zoomCurrentDistance - this.zoomLastDistance) / 400;
           let zoom = this.state.zoom - distance;
+
           if (zoom < 0) zoom = 0.0000001;
           if (zoom > 1) zoom = 1;
           this.setState({ zoom });
