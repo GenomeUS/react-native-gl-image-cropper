@@ -232,4 +232,4 @@ ImageCropper.propTypes = {
 }
 
 
-export default ImageCropper;
+module.exports = ImageCropper;

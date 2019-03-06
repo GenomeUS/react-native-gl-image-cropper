@@ -1,7 +1,7 @@
 import GL from "gl-react";
 import React from "react";
-import rectCrop from "rect-crop";
-import rectClamp from "rect-clamp";
+import rectCrop from 'rect-crop';
+import rectClamp from 'rect-clamp';
 import PropTypes from 'prop-types';
 
 const shaders = GL.Shaders.create({
