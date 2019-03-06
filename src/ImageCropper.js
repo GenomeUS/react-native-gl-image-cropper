@@ -78,14 +78,17 @@ class ImageCropper extends Component {
     });
 
     this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onStartShouldSetPanResponderCapture: () => true,
-      onMoveShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderTerminationRequest: () => false,
-      onShouldBlockNativeResponder: () => true,
+      /* eslint-disable */
 
-      onPanResponderGrant: () => {
+      onStartShouldSetPanResponder: (evt, gestureState) => true,
+      onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
+      onMoveShouldSetPanResponder: (evt, gestureState) => true,
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
+      onPanResponderTerminationRequest: (evt, gestureState) => false,
+      onShouldBlockNativeResponder: (evt, gestureState) => true,
+
+      onPanResponderGrant: (evt, gestureState) => {
+        /* eslint-enable */
         // move variables
         this.offsetX = this.state.centerX;
         this.offsetY = this.state.centerY;
