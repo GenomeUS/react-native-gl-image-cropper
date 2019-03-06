@@ -1,3 +1,2 @@
 npm install;
-ls;
-cd /example && npm install;
+cd example && pwd &&  npm install;
