@@ -102,4 +102,4 @@ const GLImage = GL.createComponent(
     }
   });
 
-module.exports = GLImage;
+export default GLImage;
