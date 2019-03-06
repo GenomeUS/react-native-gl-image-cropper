@@ -15,7 +15,11 @@ jobs:
             - v1-dependencies-
       - run:
           name: Install dependencies
-          command: npm run installForCi
+          command: npm install
+      - run:
+          name: Install Example dependencies
+          working_directory: ~/react-native-gl-image-cropper/example
+          command: npm install
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
