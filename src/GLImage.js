@@ -26,7 +26,7 @@ const shaders = GL.Shaders.create({
   }
 });
 
-const GlImage = GL.createComponent(
+const GLImage = GL.createComponent(
 ({
   width,
   height,
@@ -91,7 +91,7 @@ const GlImage = GL.createComponent(
   />;
 },
   {
-    displayName: "GlImage",
+    displayName: "GLImage",
     propTypes: {
       source: PropTypes.any.isRequired,
       imageSize: PropTypes.shape({
@@ -102,4 +102,4 @@ const GlImage = GL.createComponent(
     }
   });
 
-export default GlImage;
+module.exports = GLImage;

@@ -8,7 +8,9 @@ import {
 } from 'react-native'
 
 import { Surface } from 'gl-react-native'
-import GLImage from './GLImage';
+const GLImage = require("./GLImage")
+
+
 
 
 const imageDimensionsAfterZoom = (viewport, dimensions, zoom) => {
