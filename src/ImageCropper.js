@@ -189,7 +189,7 @@ class ImageCropper extends Component {
     return (
         <View {...this._panResponder.panHandlers}>
           <Surface width={this.props.cropWidth} height={this.props.cropHeight} pixelRatio={this.props.pixelRatio} backgroundColor="transparent" ref="cropit">
-		        <GlImage
+		        <GLImage
 		          source={{ uri: this.props.image}}
               imageSize={{height: this.state.imageHeight, width: this.state.imageWidth}}
 		          resizeMode="cover"

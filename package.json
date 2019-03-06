@@ -13,5 +13,9 @@
     "react-native": "0.57.5"
   },
   "author": "José Guerrero",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "rect-clamp": "0.0.0",
+    "rect-crop": "0.0.0"
+  }
 }
