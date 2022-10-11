@@ -23,13 +23,13 @@
     "gl-react": "^2.2.4",
     "gl-react-native": "^2.57.0",
     "react": "16.6.1",
-    "react-native": "0.57.5"
+    "react-native": "0.70.2"
   },
   "peerDependencies": {
     "gl-react": "^2.2.4",
     "gl-react-native": "^2.57.0",
     "react": "16.6.1",
-    "react-native": "0.57.5"
+    "react-native": "0.70.2"
   },
   "author": "José Guerrero",
   "license": "MIT"
